@@ -4,10 +4,10 @@ import math
 from sklearn.metrics import roc_auc_score
 
 file_vec = '../data/vec_n2v.txt'
-test = '../data/test_undirected.txt'  # 测试集中有关联的点对
-train = '../data/train_undirected.txt'  # 训练集中有关联的点对
-test_un = '../data/test_negative.txt'  # 测试集中无关联的点对
-train_un = '../data/train_negative.txt'  # 训练集中无关联的点对
+test = '../data/test_undirected.txt'
+train = '../data/train_undirected.txt'
+test_un = '../data/test_negative.txt'
+train_un = '../data/train_negative.txt'
 user_file = '../data/sorted_nodes1.txt'
 add_vec_train = '../data/add_vec_train.txt'
 add_vec_test = '../data/add_vec_test.txt'

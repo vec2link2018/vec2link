@@ -1,5 +1,5 @@
 # coding:utf-8
-# 先sa+ta，sb+tb，再lsh(sa+ta),lsh(sb+tb),最后将二者拼在一起
+# sa+ta,sb+tb,lsh(sa+ta),lsh(sb+tb),concat
 import math
 
 import numpy as np
@@ -9,10 +9,10 @@ from sklearn.metrics import roc_auc_score
 fri_vec = '../data/vec_n2v.txt'
 user_file = '../data/sorted_nodes1.txt'
 traj_vec = '../data/user_vec.txt'
-new_vec = '../data/fri_traj_vec.txt'  # 存放节点的新向量表示
+new_vec = '../data/fri_traj_vec.txt'  # new representation
 
 
-# 轨迹向量字典
+# traj_vec_dict
 traj_dict = {}
 
 t_v = open(traj_vec)
@@ -75,10 +75,10 @@ for line in t1.readlines():
     fri_traj_dictionary[line.split()[0]] = line[(len(line.split()[0])+1):-1]
 t1.close()
 
-test = '../data/test_undirected.txt'  # 测试集中有关联的点对
-train = '../data/train_undirected.txt'  # 训练集中有关联的点对
-test_un = '../data/test_negative.txt'  # 测试集中无关联的点对
-train_un = '../data/train_negative.txt'  # 训练集中无关联的点对
+test = '../data/test_undirected.txt'  # test positive
+train = '../data/train_undirected.txt'  # train positive
+test_un = '../data/test_negative.txt'  # test negative
+train_un = '../data/train_negative.txt'  # train negative
 
 fri_traj_train = '../data/fri_traj_train.txt'
 fri_traj_test = '../data/fri_traj_test.txt'

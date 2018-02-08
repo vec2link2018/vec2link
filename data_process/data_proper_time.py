@@ -1,6 +1,6 @@
 # coding:utf-8
 import utils
-# 选择原始check-in数据集中纬度（25-50），经度（65-125）的签到记录
+# You can choose the location range of check-ins
 check_in = '../data/gowalla_totalCheckins.txt'
 data_range = '../data/data_range.txt'
 d_r = open(data_range,'w')
@@ -14,10 +14,7 @@ for line in c_i.readlines():
 d_r.close()
 c_i.close()
 
-# 首先选择出09年2月-10年10月的记录
-# 取填写日报的日期，规则：把当月所有的工作日时间全部返回
-
-# 创建09年2月-10年10月的年月字典year_month_dict
+# You can choose the check_time of check-ins
 # 2010/5-2010/10(GWL)
 year_lst = [2010]
 month_lst = [i for i in range(1,13)]
@@ -63,7 +60,7 @@ for y in year_lst:
 #         else:
 #             pass
 
-# 从所有的轨迹记录中选出09-02到10-10的轨迹记录
+#
 user_poi = '../data/data_range.txt'
 poi_filter1 = '../data/poi_filter1.txt'
 u_p = open(user_poi)
@@ -76,7 +73,8 @@ for line in u_p.readlines():
 u_p.close()
 p_f.close()
 
-# 获取填写日报的日期，规则：把当月所有的工作日时间全部返回
+# check-ins in weekday at 12:00-15:00 and 19:00-24:00
+# check-ins in weekend at 8:00-12:00 and 15:00-19:00
 user_poi = '../data/poi_filter1.txt'
 weekday_poi = '../data/weekday_poi.txt'
 weekend_poi = '../data/weekend_poi.txt'
@@ -106,8 +104,6 @@ for line in u_p.readlines():
 u_p.close()
 wd_p.close()
 we_p.close()
-
-
 
 poi_filter = '../data/poi_filter2.txt'
 p_f = open(poi_filter,'w')

@@ -4,7 +4,9 @@ import numpy as np
 from sklearn.metrics import roc_auc_score
 import tensorflow.contrib.layers as tcl
 
-class Mlp:
+# run lsh_joint.py first
+
+class CNN:
     def __init__(self, sess, inputs_data, outputs_data, test_inputs, test_labels, output_dim, lr=0.0001,
                  batch_size=128, run_time=100000, learning_rate_decay_factor=0.98, output_interval=200):
         self._sess = sess
@@ -114,7 +116,7 @@ class Mlp:
                     self._sess.run(self.learning_rate_decay_op)
                 loss_history[i % 3] = current_loss
 
-                # 计算训练集上的auc
+                #
                 x_train, y_train = self._get_train()
                 _train_output = self._sess.run([self._output], {self._x: x_train, self._y: y_train})
                 train_score = []
@@ -129,7 +131,7 @@ class Mlp:
 
                 train_auc = roc_auc_score(train_true, train_score)
 
-                # 测试集上的loss，并求出score
+                #
                 x_test, y_test = self._get_test()
                 _test_loss, _test_output = self._sess.run([self.loss, self._output],
                                                           {self._x: x_test, self._y: y_test})
@@ -138,7 +140,7 @@ class Mlp:
                     for te_o in te_out:
                         test_score.append(te_o)
 
-                # 所有真实情况下的正样本数
+                #
                 true_pos_count = 0
 
                 test_true = []
@@ -184,7 +186,7 @@ f_te.close()
 config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
 sess = tf.Session(config=config)
-tf_model = Mlp(sess, train_inputs, train_labels, test_inputs, test_labels, 1,
+tf_model = CNN(sess, train_inputs, train_labels, test_inputs, test_labels, 1,
                lr=0.00003, run_time=100000, batch_size=64, learning_rate_decay_factor=0.9)
 saver = tf.train.Saver()
 sess.run(tf.global_variables_initializer())

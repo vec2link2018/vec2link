@@ -1,7 +1,7 @@
 # coding:utf-8
 import gc
-# 创建轨迹字典，key为poi，value为poi位于矩阵中的列下标（行号-1）
 import random
+# create user poi-frequency matrix
 
 import utils
 
