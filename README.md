@@ -1,10 +1,10 @@
-# SCALP:
+# vec2link:
 
-This repository provides a reference implementation of *SCALP*
+This repository provides a reference implementation of *vec2link*
 
-The *SCALP* is a novel link prediction framework, by jointly modeling both user's social network relationship and spatiotemporal check-in information
+The *vec2link* is a novel link prediction framework, by jointly modeling both user's social network relationship and spatiotemporal check-in information
 
-Before to execute *SCALP*, it is necessary to install the following packages:
+Before to execute *vec2link*, it is necessary to install the following packages:
 <br/>
 ``pip install futures``
 <br/>
@@ -40,4 +40,4 @@ Before to execute *SCALP*, it is necessary to install the following packages:
 
 ### Miscellaneous
 
-*Note:* This is only a reference implementation of *SCALP*.
+*Note:* This is only a reference implementation of *vec2link*.
