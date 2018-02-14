@@ -25,7 +25,6 @@ for line in f_n.readlines():
     else:
         adj_dictionary[str(user)] = list()
         adj_dictionary[str(user)].append(location)
-        # adj_dictionary[str(user)] = list(location)不可以这样，如果location是两位数，它会被拆成两个部分
 f_n.close()
 
 # user records < 10
