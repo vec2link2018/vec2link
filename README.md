@@ -1,6 +1,6 @@
 # vec2link:
 
-This repository provides a reference implementation of *vec2link*
+This repository provides a Python implementation of *vec2link*
 
 The *vec2link* is a novel link prediction framework, by jointly modeling both user's social network relationship and spatiotemporal check-in information
 
@@ -33,10 +33,10 @@ Before to execute *vec2link*, it is necessary to install the following packages:
 
 #### Options
 
-- --You can choose the location range of check_ins or the check time by modify /data_process/data_proper_time.py
-- --You can choose *n* user records and *m* POI ID preserve and the number of user nodes(just sub-graph) by modify /data_process/data_filter.py
-- --You can adjust the proportion of the training set and the test set by modify /data_process/data_split.py
-- --You can choose /NE/ which includes:node2vec,line,deepWalk,grarep or /struc2vec/ which includes:struc2vec to generate the network representation
+- --You can choose the location range of check_ins or the check-in time by modifying /data_process/data_proper_time.py
+- --You can choose *n* user records, *m* POI IDs, and the number of user nodes(the sub-graph) by modifying /data_process/data_filter.py
+- --You can adjust the proportion of the training set and the test set by modifying /data_process/data_split.py
+- --You can choose the method of network embedding in /NE/ which includes:node2vec,line,deepWalk,grarep or /struc2vec/ which includes:struc2vec to generate the network representations
 
 ### Miscellaneous
 
