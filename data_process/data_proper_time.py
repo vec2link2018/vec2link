@@ -94,9 +94,9 @@ for line in u_p.readlines():
         my_date = line.split()[1].split('T')[0] + ' ' + line.split()[1].split('T')[1].split('Z')[0]
 
         my_time = utils.Time(my_date)
-        # 获取所有的工作日
+        # obtain all weekdays
         weekday_dict = my_time.getDateByDateTime()
-        # 如果刚记录是工作日，则将其写入工作日文件
+        # record the weekdays down
         if utils.key_in_dic(line.split()[1].split('T')[0],weekday_dict):
             wd_p.write(line)
         else:
